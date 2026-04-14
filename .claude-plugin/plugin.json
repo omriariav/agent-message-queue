@@ -9,6 +9,14 @@
   "repository": "https://github.com/avivsinai/agent-message-queue",
   "license": "MIT",
   "skills": "./skills/",
+  "monitors": [
+    {
+      "name": "amq-inbox",
+      "command": "${CLAUDE_PLUGIN_ROOT}/scripts/claude-monitor-stream.sh",
+      "autoStart": true,
+      "description": "Stream new AMQ messages into Claude's transcript as they arrive (replaces amq wake TIOCSTI injection)"
+    }
+  ],
   "keywords": [
     "messaging",
     "agents",
